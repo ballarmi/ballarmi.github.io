@@ -1,6 +1,6 @@
 /** 
  * ===================================================================
- * Main js
+ * main js
  *
  * ------------------------------------------------------------------- 
  */ 
@@ -9,72 +9,187 @@
 
 	"use strict";
 
-	/* --------------------------------------------------- */
+	/*---------------------------------------------------- */
 	/* Preloader
 	------------------------------------------------------ */ 
    $(window).load(function() {
+
       // will first fade out the loading animation 
     	$("#loader").fadeOut("slow", function(){
 
         // will fade out the whole DIV that covers the website.
         $("#preloader").delay(300).fadeOut("slow");
 
-      }); 
+      });       
+
   	})
 
 
   	/*---------------------------------------------------- */
+  	/* FitText Settings
+  	------------------------------------------------------ */
+  	setTimeout(function() {
+
+   	$('#intro h1').fitText(1, { minFontSize: '42px', maxFontSize: '84px' });
+
+  	}, 100);
+
+
+	/*---------------------------------------------------- */
 	/* FitVids
 	------------------------------------------------------ */ 
   	$(".fluid-video-wrapper").fitVids();
 
 
-	/* --------------------------------------------------- */
-	/*  Vegas Slideshow
+	/*---------------------------------------------------- */
+	/* Owl Carousel
+	------------------------------------------------------ */ 
+	$("#owl-slider").owlCarousel({
+        navigation: false,
+        pagination: true,
+        itemsCustom : [
+	        [0, 1],
+	        [700, 2],
+	        [960, 3]
+	     ],
+        navigationText: false
+    });
+
+
+	/*----------------------------------------------------- */
+	/* Alert Boxes
+  	------------------------------------------------------- */
+	$('.alert-box').on('click', '.close', function() {
+	  $(this).parent().fadeOut(500);
+	});	
+
+
+	/*----------------------------------------------------- */
+	/* Stat Counter
+  	------------------------------------------------------- */
+   var statSection = $("#stats"),
+       stats = $(".stat-count");
+
+   statSection.waypoint({
+
+   	handler: function(direction) {
+
+      	if (direction === "down") {       		
+
+			   stats.each(function () {
+				   var $this = $(this);
+
+				   $({ Counter: 0 }).animate({ Counter: $this.text() }, {
+				   	duration: 4000,
+				   	easing: 'swing',
+				   	step: function (curValue) {
+				      	$this.text(Math.ceil(curValue));
+				    	}
+				  	});
+				});
+
+       	} 
+
+       	// trigger once only
+       	this.destroy();      	
+
+		},
+			
+		offset: "90%"
+	
+	});	
+
+
+	/*---------------------------------------------------- */
+	/*	Masonry
 	------------------------------------------------------ */
-	$(".home-slides").vegas({
-		transition: 'fade',
-		transitionDuration: 2500,
-		delay: 5000,
-    	slides: [
-       	{ src: "images/slides/03.jpg" },
-        	{ src: "images/slides/02.jpg" },
-        	{ src: "images/slides/01.jpg" }
-    	]
-	});
+	var containerProjects = $('#folio-wrapper');
 
+	containerProjects.imagesLoaded( function() {
 
-	/* --------------------------------------------------- */
-	/*  Particle JS
-	------------------------------------------------------ */
-	$('.home-particles').particleground({
-	   dotColor: '#fff',
-	   lineColor: '#555555',
-	   particleRadius: 6,
-	   curveLines: true,
-	   density: 10000,
-	   proximity: 110
-	}); 
+		containerProjects.masonry( {		  
+		  	itemSelector: '.folio-item',
+		  	resize: true 
+		});
 
-
-	/*-----------------------------------------------------*/
-	/* tabs
-  	-------------------------------------------------------*/	
-	$(".tab-content").hide();
-	$(".tab-content").first().show();
-
-	$("ul.tabs li").click(function () {
-	   $("ul.tabs li").removeClass("active");
-	   $(this).addClass("active");
-	   $(".tab-content").hide();
-	   var activeTab = $(this).attr("data-id");
-	   $("#" + activeTab).fadeIn(700);
 	});
 
 
 	/*----------------------------------------------------*/
+	/*	Modal Popup
+	------------------------------------------------------*/
+   $('.item-wrap a').magnificPopup({
+
+      type:'inline',
+      fixedContentPos: false,
+      removalDelay: 300,
+      showCloseBtn: false,
+      mainClass: 'mfp-fade'
+
+   });
+
+   $(document).on('click', '.popup-modal-dismiss', function (e) {
+   	e.preventDefault();
+   	$.magnificPopup.close();
+   });
+
+	
+	/*-----------------------------------------------------*/
+  	/* Navigation Menu
+   ------------------------------------------------------ */  
+   var toggleButton = $('.menu-toggle'),
+       nav = $('.main-navigation');
+
+   // toggle button
+   toggleButton.on('click', function(e) {
+
+		e.preventDefault();
+		toggleButton.toggleClass('is-clicked');
+		nav.slideToggle();
+
+	});
+
+   // nav items
+  	nav.find('li a').on("click", function() {   
+
+   	// update the toggle button 		
+   	toggleButton.toggleClass('is-clicked'); 
+   	// fadeout the navigation panel
+   	nav.fadeOut();   		
+   	     
+  	});
+
+
+   /*---------------------------------------------------- */
+  	/* Highlight the current section in the navigation bar
+  	------------------------------------------------------ */
+	var sections = $("section"),
+	navigation_links = $("#main-nav-wrap li a");	
+
+	sections.waypoint( {
+
+       handler: function(direction) {
+
+		   var active_section;
+
+			active_section = $('section#' + this.element.id);
+
+			if (direction === "up") active_section = active_section.prev();
+
+			var active_link = $('#main-nav-wrap a[href="#' + active_section.attr("id") + '"]');			
+
+         navigation_links.parent().removeClass("current");
+			active_link.parent().addClass("current");
+
+		}, 
+
+		offset: '25%'
+	});
+
+
+	/*---------------------------------------------------- */
   	/* Smooth Scrolling
-  	------------------------------------------------------*/
+  	------------------------------------------------------ */
   	$('.smoothscroll').on('click', function (e) {
 	 	
 	 	e.preventDefault();
@@ -88,52 +203,16 @@
       	window.location.hash = target;
       });
 
-  	});
+  	});  
+  
 
-
-  	/* --------------------------------------------------- */
+   /*---------------------------------------------------- */
 	/*  Placeholder Plugin Settings
-	------------------------------------------------------ */
+	------------------------------------------------------ */ 
 	$('input, textarea, select').placeholder()  
 
 
   	/*---------------------------------------------------- */
-   /* ajaxchimp
-	------------------------------------------------------ */
-
-	// Example MailChimp url: http://xxx.xxx.list-manage.com/subscribe/post?u=xxx&id=xxx
-	var mailChimpURL = 'http://facebook.us8.list-manage.com/subscribe/post?u=cdb7b577e41181934ed6a6a44&amp;id=e65110b38d'
-
-	$('#mc-form').ajaxChimp({
-
-		language: 'es',
-	   url: mailChimpURL
-
-	});
-
-	// Mailchimp translation
-	//
-	//  Defaults:
-	//	 'submit': 'Submitting...',
-	//  0: 'We have sent you a confirmation email',
-	//  1: 'Please enter a value',
-	//  2: 'An email address must contain a single @',
-	//  3: 'The domain portion of the email address is invalid (the portion after the @: )',
-	//  4: 'The username portion of the email address is invalid (the portion before the @: )',
-	//  5: 'This email address looks fake or invalid. Please enter a real email address'
-
-	$.ajaxChimp.translations.es = {
-	  'submit': 'Submitting...',
-	  0: '<i class="fa fa-check"></i> We have sent you a confirmation email',
-	  1: '<i class="fa fa-warning"></i> You must enter a valid e-mail address.',
-	  2: '<i class="fa fa-warning"></i> E-mail address is not valid.',
-	  3: '<i class="fa fa-warning"></i> E-mail address is not valid.',
-	  4: '<i class="fa fa-warning"></i> E-mail address is not valid.',
-	  5: '<i class="fa fa-warning"></i> E-mail address is not valid.'
-	}
-
-
-	/*---------------------------------------------------- */
 	/*	contact form
 	------------------------------------------------------ */
 
@@ -148,7 +227,7 @@
 			$.ajax({      	
 
 		      type: "POST",
-		      url: "sendEmail.php",
+		      url: "inc/sendEmail.php",
 		      data: $(form).serialize(),
 		      beforeSend: function() { 
 
@@ -186,24 +265,27 @@
 	});
 
 
-	/*----------------------------------------------------*/
-	/* Final Countdown Settings
-	------------------------------------------------------ */
-	var finalDate = '2018/11/13';
+ 	/*----------------------------------------------------- */
+  	/* Back to top
+   ------------------------------------------------------- */ 
+	var pxShow = 300; // height on which the button will show
+	var fadeInTime = 400; // how slow/fast you want the button to show
+	var fadeOutTime = 400; // how slow/fast you want the button to hide
+	var scrollSpeed = 300; // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
 
-	$('div#counter').countdown(finalDate)
-   	.on('update.countdown', function(event) {
+   // Show or hide the sticky footer button
+	jQuery(window).scroll(function() {
 
-   		$(this).html(event.strftime('<div class=\"half\">' +
-   											 '<span>%D <sup>days</sup></span>' + 
-   										 	 '<span>%H <sup>hours</sup></span>' + 
-   										 	 '</div>' +
-   										 	 '<div class=\"half\">' +
-   										 	 '<span>%M <sup>mins</sup></span>' +
-   										 	 '<span>%S <sup>secs</sup></span>' +
-   										 	 '</div>'));
+		if (!( $("#header-search").hasClass('is-visible'))) {
 
-   });     
- 
+			if (jQuery(window).scrollTop() >= pxShow) {
+				jQuery("#go-top").fadeIn(fadeInTime);
+			} else {
+				jQuery("#go-top").fadeOut(fadeOutTime);
+			}
+
+		}		
+
+	});		
 
 })(jQuery);

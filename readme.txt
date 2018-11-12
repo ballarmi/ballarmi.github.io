@@ -1,17 +1,18 @@
 
 ==================================================================================================
 
-KHRONOS is a creative pack of coming soon template pages. It's elegant and clean design makes it
-perfect for every creative people, corporate, agency or anyone who is currently building their
-site and want to show a coming soon page in a creative way. Khronos is available in three style 
-variations: static, slideshow, and particle background. It is fully responsive and
-retina ready, looks great on any screen and devices. It is also mailchimp ready and has a working
-ajax contact form.
+KARDS is a modern and clean personal vCard website template. It has many cool features found
+in premium templates. It has timeline items, stats section, skillbars, working ajax form,
+frontend form validation, a portfolio section to showcase your works and many more. It looks 
+great on all devices from mobile to desktop. It's also retina ready so your site will look 
+crisp and sharp on any device. Kards is the ideal template for creating digital personal resume 
+and portfolio website.
+
 ==================================================================================================
 
 
 LICENSE:
-KHRONOS is released under the Creative Commons Attribution 3.0 License
+KARDS is released under the Creative Commons Attribution 3.0 License
 (http://creativecommons.org/licenses/by/3.0/). This means that you are free:
 
    to Share - to copy, distribute, display, and perform the work
@@ -58,7 +59,7 @@ Also, keep your Paypal receipt as proof of payment and your good to go.
 
 SUPPORT:
     
-Since KHRONOS is distributed for free, support is not offered. KARDS is coded according 
+Since KARDS is distributed for free, support is not offered. KARDS is coded according 
 to current web standards and we did our best to make the template easy to use and modify.
 If you have minimum web development experience, you can easily modify the template. 
 However, If you're still new to HTML and CSS, I suggest that you visit the 
@@ -92,7 +93,8 @@ SOURCES AND CREDITS:
 I've used the following resources as listed.
 
 Fonts:
- - Roboto Font (https://www.google.com/fonts/specimen/Roboto)
+ - Lora Font (https://www.google.com/fonts/specimen/Lora)
+ - Poppins Font (https://www.google.com/fonts/specimen/Poppins) 
 
 Icons:
  - Font Awesome (http://fortawesome.github.io/Font-Awesome/)
@@ -101,18 +103,23 @@ Icons:
 
 Stock Photos and Graphics:
  - UnSplash.com (http://unsplash.com/)
- - pexels.com (https://www.pexels.com/)
+ - gratisography.com (http://www.gratisography.com/)
  
 Javascript Files:
 
  - JQuery (http://jquery.com/)
  - Modernizr (http://modernizr.com/)
+ - Waypoints (http://imakewebthings.com/jquery-waypoints/)
+ - Magnific Popup (http://dimsemenov.com/plugins/magnific-popup/)
  - jQuery Placeholder (https://github.com/mathiasbynens/jquery-placeholder)
- - Vegas Background Slideshow (http://vegas.jaysalvat.com/)
- - Particle Ground (https://github.com/jnicol/particleground) 
  - FitVids (http://fitvidsjs.com/)
+ - Fittext (http://fittextjs.com/)
  - jQuery Validator (http://jqueryvalidation.org/)
- - ajaxchimp (https://github.com/scdoshi/jquery-ajaxchimp)
+ - Imagesloaded (http://imagesloaded.desandro.com/)
+ - Masonry (http://masonry.desandro.com)
+ - pace js (http://github.hubspot.com/pace/) 
+ - owl carousel (http://www.owlgraphic.com/owlcarousel/)
+
  
 
 --------------------------------------------------------------------------------------------------------- 

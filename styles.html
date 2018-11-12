@@ -7,7 +7,7 @@
    <!--- basic page needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>Khronos - Styles</title>
+	<title>Style Demo - Kards</title>
 	<meta name="description" content="">  
 	<meta name="author" content="">
 
@@ -32,15 +32,15 @@
    		max-width: 1024px;
      	}
      	#styles .section-intro {
-   		max-width: 840px;
-   		text-align: center;
+   		max-width: 800px;
      	}
       	
-   </style>     
+   </style>       
 
    <!-- script
    ================================================== -->
 	<script src="js/modernizr.js"></script>
+	<script src="js/pace.min.js"></script>
 
    <!-- favicons
 	================================================== -->
@@ -52,76 +52,67 @@
 
 	<!-- header 
    ================================================== -->
-   <header>
-
+   <header>   	
    	<div class="row">
-   		<div class="logo">
-	         <a href="index.html">Khronos</a>
-	      </div> 
 
-			<div class="social-links">
-			   <ul>
-					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				   <li><a href="#"><i class="fa fa-pinterest"></i></a></li>				   
-				   <li><a href="#"><i class="fa fa-instagram"></i></a></li> 
-				   <li><a href="#"><i class="fa fa-dribbble"></i></a></li>				     			
-				</ul>
-			</div>
-   	</div> 
+   		<div class="top-bar">
+   			<a class="menu-toggle" href="#"><span>Menu</span></a>
 
-   </header> <!-- /header -->   
+	   		<div class="logo">
+		         <a href="index.html">KARDS</a>
+		      </div>		      
 
-   <!-- home
+		   	<nav id="main-nav-wrap">
+					<ul class="main-navigation">
+						<li><a href="index.html#intro" title="">Home</a></li>
+						<li><a href="index.html#about" title="">About</a></li>
+						<li><a href="index.html#resume" title="">Resume</a></li>
+						<li><a href="index.html#portfolio" title="">Portfolio</a></li>
+						<li><a href="index.html#services" title="">Services</a></li>					
+						<li><a class="smoothscroll"  href="#contact" title="">Contact</a></li>	
+						<li><a href="styles.html" title="">Style Demo</a></li>				
+					</ul>
+				</nav>    		
+   		</div> <!-- /top-bar --> 
+   		
+   	</div> <!-- /row --> 		
+   </header> <!-- /header -->
+
+	<!-- intro section
    ================================================== -->
-   <section id="home" class="home-static">
+   <section id="intro">   
 
-   	<div class="shadow-overlay"></div>
+   	<div class="intro-overlay"></div>	
 
-   	<div class="content-wrap-table">		   
+   	<div class="intro-content">
+   		<div class="row">
 
-		   <div class="main-content-tablecell">
+   			<div class="col-twelve">
 
-		   	<div class="row">
-		   		<div class="col-twelve">
+	   			<h5>Hello, World.</h5>
+	   			<h1>I'm Juan Dela Cruz.</h1>
 
-		   			<div id="counter">
-		   				<div class="half">
-		   					<span>334 <sup>days</sup></span> 
-		 						<span>23 <sup>hours</sup></span>
-		   				</div>
-							<div class="half">
-								<span>50 <sup>mins</sup></span>
-		 						<span>33 <sup>secs</sup></span>
-		 					</div> 
-		   			</div>
+	   			<p class="intro-position">
+	   				<span>Front-end Developer</span>
+	   				<span>UI/UX Designer</span> 
+	   			</p>
 
-			  			<div class="bottom-text">
-			  				<h1>Our site is launching soon.</h1>
-				  			<p>
-							Khronos is a modern and stylish website template designed to present
-							your future super awesome product or service. 
-				  			</p>			  				
-			  			</div>			  						  			   			
+	   			<a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
 
-			   	</div> <!-- /twelve --> 
+	   		</div>  
+   			
+   		</div>   		 		
+   	</div> <!-- /intro-content --> 
 
-			   	<div class="scroll-icon">
+   	<ul class="intro-social">        
+         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+         <li><a href="#"><i class="fa fa-behance"></i></a></li>
+         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+         <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+         <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+      </ul> <!-- /intro-social -->      	
 
-					   <p class="scroll-text">Scroll For More Info</p>
-					   <a href="#styles" class="smoothscroll">
-					   	<div class="mouse"></div>
-					   </a>
-				   	<div class="end-top"></div>
-
-					</div> <!-- /scroll-icon -->
-		   	</div> <!-- /row -->  
-
-		   </div> <!-- /main-content --> 
-		   
-		</div> <!-- /content-wrap -->
-   
-   </section> <!-- /home -->
+   </section> <!-- /intro -->
 
 
    <!-- Style Demo
@@ -319,7 +310,7 @@
 
       		<h3>Responsive Image</h3>
 
-      		<p><img src="images/shutterbug.jpg"></p>
+      		<p><img src="images/portfolio/modals/m-lighthouse.jpg"></p>
 
       	</div>
 
@@ -333,84 +324,287 @@
 
       	</div>
       	
-      </div> <!-- /row -->           
+      </div> <!-- /row -->
+
+      <div class="row add-bottom">
+
+      	<div class="col-twelve">
+
+      		<h3>Tables</h3>
+      		<p>Be sure to use properly formed table markup with <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> when building a <code>table</code>.</p>
+
+      		<div class="table-responsive">
+
+      			<table>
+					  <thead>
+					    <tr>
+					      <th>Name</th>
+					      <th>Age</th>
+					      <th>Sex</th>
+					      <th>Location</th>					    
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td>Naruto Uzumaki</td>
+					      <td>16</td>
+					      <td>Male</td>
+					      <td>Konoha</td>					    
+					    </tr>
+					    <tr>
+					      <td>Sakura Haruno</td>
+					      <td>16</td>
+					      <td>Female</td>
+					      <td>Konoha</td>			    
+					    </tr>
+					  </tbody>
+					</table>
+
+      		</div>     		
+
+      	</div>
+      	
+      </div> <!--row -->
+
+      <div class="row">
+
+		   <div class="col-six tab-full">
+
+		      <h3>Form Styles</h3>
+
+		         <form>
+			        	<div>
+			         	<label for="sampleInput">Your email</label>
+			         	<input class="full-width" type="email" placeholder="test@mailbox.com" id="sampleInput">
+			         </div>
+			         <div>
+			         	<label for="sampleRecipientInput">Reason for contacting</label>
+			         	<div class="ss-custom-select">
+			         		<select class="full-width" id="sampleRecipientInput">
+				           		<option value="Option 1">Questions</option>
+				           		<option value="Option 2">Report</option>
+				           		<option value="Option 3">Others</option>
+				         	</select>
+			         	</div>			         	
+			         </div>
+			       
+			       	<label for="exampleMessage">Message</label>
+			       	<textarea class="full-width" placeholder="Your message" id="exampleMessage"></textarea>
+
+			        	<label class="add-bottom">
+			           	<input type="checkbox">			            
+			           	<span class="label-text">Send a copy to yourself</span>
+			        	</label>
+			       
+			        	<input class="button-primary" type="submit" value="Submit">
+
+			      </form>	            
+
+		      </div>
+
+		      <div class="col-six tab-full">
+
+		      		<h3>Skill Bars</h3>
+
+		      		<ul class="skill-bars">
+						   <li>
+						   	<div class="progress percent90"><span>90%</span></div>
+						   	<strong>HTML5</strong>
+						   </li>
+						   <li>
+						   	<div class="progress percent85"><span>85%</span></div>
+						   	<strong>CSS3</strong>
+						   </li>
+						   <li>
+						   	<div class="progress percent70"><span>70%</span></div>
+						   	<strong>JQuery</strong>
+						   </li>
+						   <li>
+						   	<div class="progress percent95"><span>95%</span></div>
+						   	<strong>PHP</strong>
+						   </li>
+						   <li>
+
+						   	<div class="progress percent75"><span>75%</span></div>
+						   	<strong>Wordpress</strong>
+						   </li>
+		      
+						</ul> <!-- /skill-bars -->
+
+			        
+			        <h3>Alert Boxes</h3> 
+			        
+			        <div class="alert-box ss-error hideit">
+				        <p>Error Message. Your Message Goes Here.</p>
+				        <i class="fa fa-times close"></i>
+			        </div><!-- /error -->
+			        
+			        <div class="alert-box ss-success hideit">
+				        <p>Success Message. Your Message Goes Here.</p>
+				        <i class="fa fa-times close"></i>
+			        </div><!-- /success -->
+			        
+			        <div class="alert-box ss-info hideit">
+				         <p>Info Message. Your Message Goes Here.</p>
+				        <i class="fa fa-times close"></i>
+			        </div><!-- /info -->
+			        
+			        <div class="alert-box ss-notice hideit">
+				        <p>Notice Message. Your Message Goes Here.</p>
+				        <i class="fa fa-times close"></i>
+			        </div><!-- /notice -->
+			        
+			  </div>	         
+
+		</div> <!-- /row -->
 		   	
    </section> <!--styles -->	
 
-
-   <!-- CTA Section
+	
+   <!-- contact
    ================================================== -->
-	<section id="cta">
+	<section id="contact">
 
-   	<div class="row cta-wrap">
+		<div class="row section-intro">
+   		<div class="col-twelve">
 
-   		<div class="col-twelve cta-content">  
+   			<h5>Contact</h5>
+   			<h1>I'd Love To Hear From You.</h1>
 
-	     		<h2 class="h01"><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Styleshout Recommends Dreamhost.</a></h2>
+   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
 
-		      <p class="lead">
-		      Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT"><span>DreamHost</span></a>.
-				Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>. 
-				<!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order.	 -->
-				</p>
+   		</div> 
+   	</div> <!-- /section-intro -->
 
-				<div class="action">
-			      <a class="button large" href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Sign Up Now</a>
-		      </div>		     	
+   	<div class="row contact-form">
+
+   		<div class="col-twelve">
+
+            <!-- form -->
+            <form name="contactForm" id="contactForm" method="post" action="">
+      			<fieldset>
+
+                  <div class="form-field">
+ 						   <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
+                  </div>
+                  <div class="form-field">
+	      			   <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
+	               </div>
+                  <div class="form-field">
+	     				   <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
+	               </div>                       
+                  <div class="form-field">
+	                 	<textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
+	               </div>                      
+                 <div class="form-field">
+                     <button class="submitform">Submit</button>
+                     <div id="submit-loader">
+                        <div class="text-loader">Sending...</div>                             
+       				      <div class="s-loader">
+								  	<div class="bounce1"></div>
+								  	<div class="bounce2"></div>
+								  	<div class="bounce3"></div>
+								</div>
+							</div>
+                  </div>
+
+      			</fieldset>
+      		</form> <!-- Form End -->
+
+            <!-- contact-warning -->
+            <div id="message-warning"></div>            
+            <!-- contact-success -->
+      		<div id="message-success">
+               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+      		</div>
+
+         </div> <!-- /col-twelve -->
+   		
+   	</div> <!-- /contact-form -->
+
+   	<div class="row contact-info">
+
+   		<div class="col-four tab-full">
+
+   			<div class="icon">
+   				<i class="icon-pin"></i>
+   			</div>
+
+   			<h5>Where to find me</h5>
+
+   			<p>
+            1600 Amphitheatre Parkway<br>
+            Mountain View, CA<br>
+            94043 US
+            </p>
 
    		</div>
 
-   	</div> <!-- /cta-content -->
+   		<div class="col-four tab-full collapse">
 
-   </section> <!-- /cta --> 
+   			<div class="icon">
+   				<i class="icon-mail"></i>
+   			</div>
+
+   			<h5>Email Me At</h5>
+
+   			<p>someone@kardswebsite.com<br>
+			   	info@kardswebsite.com			     
+			   </p>
+
+   		</div>
+
+   		<div class="col-four tab-full">
+
+   			<div class="icon">
+   				<i class="icon-phone"></i>
+   			</div>
+
+   			<h5>Call Me At</h5>
+
+   			<p>Phone: (+63) 555 1212<br>
+			   	Mobile: (+63) 555 0100<br>
+			     	Fax: (+63) 555 0101
+			   </p>
+
+   		</div>
+   		
+   	</div> <!-- /contact-info -->
+		
+	</section> <!-- /contact -->
 
 
    <!-- footer
    ================================================== -->
+
    <footer>
+     	<div class="row">
 
-   	<div class="social-wrap">
-   		<div class="row">
-				
-	         <ul class="footer-social-list">
-	            <li><a href="#">
-	             	<i class="fa fa-facebook"></i><span>Facebook</span>
-	            </a></li>
-	            <li><a href="#">
-	              	<i class="fa fa-twitter"></i><span>Twitter</span>
-	            </a></li>
-	            <li><a href="#">
-	              	<i class="fa fa-pinterest"></i><span>Pinterest</span>
-	            </a></li>
-	            <li><a href="#">
-	              	<i class="fa fa-instagram"></i><span>Instagram</span>
-	            </a></li>
-	            <li><a href="#">
-	              	<i class="fa fa-dribbble"></i><span>Dribbble</span>
-	            </a></li>
-	         </ul>
-	         
-			</div> <!-- /row -->
-   	</div> <!-- /social-wrap -->
+     		<div class="col-six tab-full pull-right social">
 
-   	<div class="footer-bottom">
+     			<ul class="footer-social">        
+			      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+			      <li><a href="#"><i class="fa fa-behance"></i></a></li>
+			      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+			      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+			      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+			   </ul> 
+	      		
+	      </div>
 
-			<div class="footer-logo">
-					<img src="images/footer-logo.png" alt="">				
-			</div>
+      	<div class="col-six tab-full">
+	      	<div class="copyright">
+		        	<span>© Copyright Kards 2016.</span> 
+		        	<span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>	         	
+		         </div>		                  
+	      	</div>
 
-   		<div class="copyright">
-		     	<span>© Copyright Khronos 2016.</span> 
-		     	<span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>		         	
-		   </div>		   
+	      	<div id="go-top">
+		         <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+		      </div>
 
-   	</div> <!-- /footer-bottom -->
-
-   	<div class="back-to-top">
-		 	<a href="#top" class="smoothscroll"><span>Back to Top</span></a>
-		</div>
-
-   </footer>
+      	</div> <!-- /row -->     	
+   </footer>    
 
    <div id="preloader"> 
     	<div id="loader"></div>
