@@ -34,6 +34,10 @@
      	#styles .section-intro {
    		max-width: 800px;
      	}
+
+	.mySlides {display:none}
+	.w3-left, .w3-right, .w3-badge {cursor:pointer}
+	.w3-badge {height:13px;width:13px;padding:0}
       	
    </style>       
 
@@ -119,63 +123,128 @@
                 </p>
 
             <!-- Slide -->
-            
+			
 
-     	</div> <!-- /row -->
+
+			<div class="w3-content w3-display-container" style="max-width:800px">
+					<img class="mySlides" src="images/1.jpg" style="width:100%">
+					<img class="mySlides" src="images/2.jpg" style="width:100%">
+					<img class="mySlides" src="images/3.jpg" style="width:100%">
+					<img class="mySlides" src="images/Stickynotes.jpg" style="width:100%">
+					<img class="mySlides" src="images/Website/IndexPage1.PNG" style="width:100%">
+					<img class="mySlides" src="images/Website/ComingSoonPage3.PNG" style="width:100%">
+					<img class="mySlides" src="images/Website/Finalshot4.PNG" style="width:100%">
+
+					<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+					  <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+					  <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+					  <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+					  <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+					  <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+					  <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+					  <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
+					  <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(6)"></span>
+					  <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(7)"></span>
+
+					</div>
+				  </div>
+				  
+				  <script>
+				  var slideIndex = 1;
+				  showDivs(slideIndex);
+				  
+				  function plusDivs(n) {
+					showDivs(slideIndex += n);
+				  }
+				  
+				  function currentDiv(n) {
+					showDivs(slideIndex = n);
+				  }
+				  
+				  function showDivs(n) {
+					var i;
+					var x = document.getElementsByClassName("mySlides");
+					var dots = document.getElementsByClassName("demo");
+					if (n > x.length) {slideIndex = 1}    
+					if (n < 1) {slideIndex = x.length}
+					for (i = 0; i < x.length; i++) {
+					   x[i].style.display = "none";  
+					}
+					for (i = 0; i < dots.length; i++) {
+					   dots[i].className = dots[i].className.replace(" w3-white", "");
+					}
+					x[slideIndex-1].style.display = "block";  
+					dots[slideIndex-1].className += " w3-white";
+				  }
+				  </script>
+			</div>
+
+     	</div> 
          
      	<div >
 
      		
-   	<div class="row contact-info">
+	<section id="contact">
 
-   		<div class="col-four tab-full">
-
-   			<div class="icon">
-   				<i class="icon-pin"></i>
-   			</div>
-
-   			<h5>Where to find me</h5>
-
-   			<p>
-            1600 Amphitheatre Parkway<br>
-            Mountain View, CA<br>
-            94043 US
-            </p>
-
-   		</div>
-
-   		<div class="col-four tab-full collapse">
-
-   			<div class="icon">
-   				<i class="icon-mail"></i>
-   			</div>
-
-   			<h5>Email Me At</h5>
-
-   			<p>someone@kardswebsite.com<br>
-			   	info@kardswebsite.com			     
-			   </p>
-
-   		</div>
-
-   		<div class="col-four tab-full">
-
-   			<div class="icon">
-   				<i class="icon-phone"></i>
-   			</div>
-
-   			<h5>Call Me At</h5>
-
-   			<p>Phone: (+63) 555 1212<br>
-			   	Mobile: (+63) 555 0100<br>
-			     	Fax: (+63) 555 0101
-			   </p>
-
-   		</div>
-   		
-   	</div> <!-- /contact-info -->
-		
-	</section> <!-- /contact -->
+            <div class="row section-intro">
+               <div class="col-twelve">
+    
+                   <h5>Contact</h5>
+                   <h1>I'd Love To Hear From You.</h1>
+    
+                   <p class="lead">Feel free to contact me about absolutely anything.
+                       Job opportunity? Sure! Advice on the best specs for a gaming computer? Of course! Need help with that one boss battle in Dark Souls 3? That’s what I’m here for!</p>
+    
+               </div>
+           </div> <!-- /section-intro -->
+    
+           <div class="row contact-info">
+    
+               <div class="col-four tab-full">
+    
+                   <div class="icon">
+                       <i class="icon-pin"></i>
+                   </div>
+    
+                   <h5>Where to find me</h5>
+    
+                   <p>
+                803 S Campus Ave<br>
+                Oxford, OH<br>
+                45056 US
+                </p>
+    
+               </div>
+    
+               <div class="col-four tab-full collapse">
+    
+                   <div class="icon">
+                       <i class="icon-mail"></i>
+                   </div>
+    
+                   <h5>Email Me At</h5>
+    
+                   <p>Michaela.I.Ballard@gmail.com<br>
+                   </p>
+    
+               </div>
+    
+               <div class="col-four tab-full">
+    
+                   <div class="icon">
+                       <i class="icon-phone"></i>
+                   </div>
+    
+                   <h5>Call Me At</h5>
+    
+                   <p>Mobile: (513) 400 6962<br>
+                   </p>
+    
+               </div>
+    
+           </div> <!-- /contact-info -->
+    
+        </section> <!-- /contact -->
 
 
    <!-- footer
